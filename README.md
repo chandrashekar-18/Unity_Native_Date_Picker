@@ -79,3 +79,17 @@ Clone this repository into your project folder or download it as a ZIP file and 
    {
        _selectedDateText.text = date.ToString("dd/MM/yyyy");
    }
+
+3. **Testing:**
+ - Unity Editor:
+  Clicking the pick date button in the Unity Editor will simulate a date (December 4, 2000).
+
+ - Android & iOS Devices:
+  On actual devices, the native date picker UI will be displayed, allowing for real date selection.
+
+## Screenshots
+Below are sample screenshots showing the native date picker on Android and iOS.
+
+| **Android** | **iOS** |
+| --- | --- |
+| <img src="https://github.com/user-attachments/assets/300dcd67-038b-4920-b33a-4445e9d75e0d" alt="Android Date Picker" width="195" height="422"> | <img src="https://github.com/user-attachments/assets/1edf1a0a-7150-477b-98bd-70e2a34c4045" alt="iOS Date Picker" width="195" height="422"> |
