@@ -4,10 +4,10 @@ A native plugin for Unity to integrate the system date picker on both Android an
 
 ## Features
 
-- **Android Integration:** Uses a Java plugin (provided as an AAR file in the Plugins/Android folder with the fully qualified name `com.plugin.datepickerlibrary.DatePicker`) to open the native Android date picker. See the Unity C# integration in [NativeDatePickerManager.cs](&#8203;:contentReference[oaicite:0]{index=0}).
-- **iOS Integration:** Implements an Objective-C plugin ([DatePickerPlugin.m](&#8203;:contentReference[oaicite:1]{index=1})) that displays the native UIDatePicker.
+- **Android Integration:** Uses a Java plugin (provided as an AAR file in the Plugins/Android folder with the fully qualified name `com.plugin.datepickerlibrary.DatePicker`) to open the native Android date picker. See the Unity C# integration in [NativeDatePickerManager.cs](Assets/Scripts/NativeDatePickerManager.cs)
+- **iOS Integration:** Implements an Objective-C plugin ([DatePickerPlugin.m](Assets/Plugins/iOS/DatePickerPlugin.m) that displays the native UIDatePicker.
 - **Editor Simulation:** In the Unity Editor, a dummy date is returned for quick testing.
-- **Simple API:** Easily trigger the date picker and receive the selected date via callbacks, as demonstrated in [DemoUI.cs](&#8203;:contentReference[oaicite:2]{index=2}).
+- **Simple API:** Easily trigger the date picker and receive the selected date via callbacks, as demonstrated in [DemoUI.cs](Assets/Scripts/DemoUI.cs).
 
 ## Installation & Integration
 
@@ -19,11 +19,11 @@ Clone this repository into your project folder or download it as a ZIP file and 
 
 - **Scripts:**  
   Place the following scripts into your Unity project’s `Scripts/` folder (or a folder of your choice):
-  - [NativeDatePickerManager.cs](&#8203;:contentReference[oaicite:3]{index=3})
-  - [DemoUI.cs](&#8203;:contentReference[oaicite:4]{index=4})
+  - [NativeDatePickerManager.cs](Assets/Scripts/NativeDatePickerManager.cs)
+  - [DemoUI.cs](Assets/Scripts/DemoUI.cs)
 
 - **iOS Plugin:**  
-  Copy the [DatePickerPlugin.m](&#8203;:contentReference[oaicite:5]{index=5}) file into the `Plugins/iOS/` folder. Unity will include this file when building for iOS.
+  Copy the [DatePickerPlugin.m](Assets/Plugins/iOS/DatePickerPlugin.m) file into the `Plugins/iOS/` folder. Unity will include this file when building for iOS.
 
 - **Android Plugin:**  
   Place the provided Java plugin AAR file (e.g., `DatePickerLibrary-release.aar`) into the `Plugins/Android/` folder. This AAR file contains the implementation for the native Android date picker. You will also need to configure the following Gradle files:
@@ -56,7 +56,7 @@ Clone this repository into your project folder or download it as a ZIP file and 
 ### 4. iOS Integration Steps
 
 - **Objective-C Plugin:**  
-  The [DatePickerPlugin.m](&#8203;:contentReference[oaicite:6]{index=6}) file contains the native code to display a UIDatePicker with a custom toolbar. When the user taps the "OK" button, the plugin sends the selected date back to Unity using `UnitySendMessage`.
+  The [DatePickerPlugin.m](Assets/Plugins/iOS/DatePickerPlugin.m) file contains the native code to display a UIDatePicker with a custom toolbar. When the user taps the "OK" button, the plugin sends the selected date back to Unity using `UnitySendMessage`.
 
 - **Xcode Project:**  
   When you build for iOS, ensure that Xcode includes the DatePickerPlugin.m file. This file should be part of your Xcode project under the Plugins/iOS directory.
@@ -67,7 +67,7 @@ Clone this repository into your project folder or download it as a ZIP file and 
    Make sure that `NativeDatePickerManager` is attached to a GameObject in your scene (or create one at runtime). This manager handles the communication with the native date picker.
 
 2. **Set Up UI:**  
-   Use the provided [DemoUI.cs](&#8203;:contentReference[oaicite:7]{index=7}) as an example. In this demo, a button click triggers the date picker and the selected date is displayed on a TextMeshPro label.
+   Use the provided [DemoUI.cs](Assets/Scripts/DemoUI.cs) as an example. In this demo, a button click triggers the date picker and the selected date is displayed on a TextMeshPro label.
 
    ```csharp
    public void OnPickDateButtonClicked()
